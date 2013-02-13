@@ -2,7 +2,8 @@ class CreateNotes < ActiveRecord::Migration
     def change
     create_table(:notes) do |t|
     	
-      t.text :body
+    	t.integer 	:task_id
+      t.text 			:body
 
       t.timestamps
     end
