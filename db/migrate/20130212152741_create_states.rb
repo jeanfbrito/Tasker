@@ -8,4 +8,3 @@ class CreateStates < ActiveRecord::Migration
     end
   end
 end
-20130212213124

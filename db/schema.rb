@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130212225611) do
 
   create_table "notes", :force => true do |t|
+    t.integer  "task_id"
     t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -22,6 +23,12 @@ ActiveRecord::Schema.define(:version => 20130212225611) do
   create_table "priorities", :force => true do |t|
     t.integer  "level"
     t.string   "color"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -36,8 +43,12 @@ ActiveRecord::Schema.define(:version => 20130212225611) do
   create_table "tasks", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.date     "due_time"
+    t.string   "estimated_time"
+    t.integer  "priority_id"
+    t.integer  "state_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|

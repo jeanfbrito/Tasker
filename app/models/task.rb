@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
 
-	has_one		:state
-	has_one		:priority
+	belongs_to	:state
+	belongs_to	:priority
 	has_many 	:notes
 
 	#self relational code
