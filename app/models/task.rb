@@ -1,5 +1,7 @@
 class Task < ActiveRecord::Base
 
+	attr_accessible :title, :description
+
 	belongs_to	:state
 	belongs_to	:priority
 	has_many 	:notes
