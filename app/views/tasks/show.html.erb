@@ -10,23 +10,11 @@
   <%= @task.description %>
 </p>
 
-<p>
-  <b>Subtasks:</b>
-  <table>
-  	<tr>
-  		<th>Title</th>
-  		<th></th>
-  		<th></th>
-  		<th></th>
-  	</tr>
-  	<% @task.subtasks.each do |subtask| %>
-  	<tr>
-  		<td><%= subtask.title %></td> 
-  		<td><%= link_to 'Show', subtask %></td>
-  	</tr>
-  	<% end %>
-  </table>
-</p>
+<% if @task.subtasks.count > 0 %>
+  <%= render 'subtasks' %>
+<% end %>
+
+<%= hello_world("Jean") %>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
