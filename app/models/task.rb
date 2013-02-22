@@ -13,5 +13,12 @@ class Task < ActiveRecord::Base
 	has_one 	:inverse_task_subtasks, :class_name => "TaskSubtask", :foreign_key => "subtask_id"  
   has_one 	:inverse_subtasks, :through => :inverse_task_subtasks, :source => :task 
 
+  def have_subtasks?
+  	if subtasks.count > 0
+    	return true
+    end
+    false
+  end
+
 end
 

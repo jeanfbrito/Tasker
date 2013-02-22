@@ -10,7 +10,7 @@
   <%= @task.description %>
 </p>
 
-<% if @task.subtasks.count > 0 %>
+<% if @task.have_subtasks? %>
   <%= render 'subtasks' %>
 <% end %>
 
