@@ -7,7 +7,7 @@
   		<th></th>
   		<th></th>
   	</tr>
-  	<% @task.subtasks.each do |subtask| %>
+  	<% @task.children.each do |subtask| %>
   	<tr>
       <td><%= link_to subtask.title, subtask %></td>
   		<td><%= subtask.title %></td> 

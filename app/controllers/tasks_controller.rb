@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 	def index
-    @tasks = Task.all
+    @tasks = Task.arrange(:order => :created_at)
   end
 
   def show
@@ -13,7 +13,7 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @task = Task.new(:parent_id => params[:parent_id])
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<ul class="breadcrumb">
+	<% for ancestor in @task.ancestors do %>
+  <li><%= link_to ancestor.title, ancestor %> <span class="divider">/</span></li>
+  <% end %>
+</ul>
+
 <p>
   <b>Title:</b>
   <%= @task.title %>
@@ -11,10 +17,9 @@
 </p>
 
 <% if @task.have_subtasks? %>
-  <%= render 'subtasks' %>
+	<%= render "subtasks" %>
 <% end %>
 
-<%= hello_world("Jean") %>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

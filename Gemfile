@@ -7,7 +7,13 @@ gem 'rails', '3.2.12'
 
 gem 'sqlite3'
 
+gem 'thin'
+
 gem 'devise'
+
+gem 'nifty-generators'
+gem 'ancestry'
+
 
 
 # Gems used only for assets and not required
@@ -40,3 +46,9 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
