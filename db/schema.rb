@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222183229) do
+ActiveRecord::Schema.define(:version => 20130312015657) do
 
   create_table "notes", :force => true do |t|
-    t.integer  "task_id"
+    t.string   "title"
     t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -27,8 +27,39 @@ ActiveRecord::Schema.define(:version => 20130222183229) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "project_notes", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "note_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "project_tasks", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "task_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.date     "deadline"
+    t.integer  "priority_id"
+    t.integer  "state_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "states", :force => true do |t|
     t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "task_notes", :force => true do |t|
+    t.integer  "task_id"
+    t.integer  "note_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
