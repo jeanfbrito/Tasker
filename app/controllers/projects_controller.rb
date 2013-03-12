@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 	def index
-    #@projects = Project.arrange(:order => :created_at)
+    @projects = Project.order('created_at')
   end
 
   def show
