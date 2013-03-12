@@ -1,8 +1,7 @@
         <ul class="breadcrumb">
-          <li><a href="#">Projeto: Gerenciador de tarefas</a> <span class="divider">/</span></li>
-          <li><a href="#">Layout</a> <span class="divider">/</span></li>
-          <li><a href="#">HTML</a> <span class="divider">/</span></li>
-          <li><a href="#">Menu</a> <span class="divider">/</span></li>
-          <li><a href="#">Criar itens do menu</a> <span class="divider">/</span></li>
-          <li class="active">Adicionar icones aos itens</li>
+        	<% for ancestor in @task.ancestors do %>
+        	<li><%= link_to ancestor.title, ancestor %> <span class="divider">/</span></li>
+        	<% end %>
+
+
         </ul>
