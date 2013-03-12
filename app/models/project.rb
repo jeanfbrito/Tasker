@@ -10,7 +10,12 @@ class Project < ActiveRecord::Base
 	has_many 	:project_tasks
 	has_many	:tasks, :through => :project_tasks
 
-
+  def have_tasks?
+  	if tasks.count > 0
+    	return true
+    end
+    false
+  end
 
 end
 

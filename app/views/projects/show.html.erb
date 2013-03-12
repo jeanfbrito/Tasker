@@ -1,10 +1,8 @@
-<%= render "shared/breadcrumb"%>
-<div class="span7" style="margin: 0;">
 	<div class="well" style="padding: 8px 0; background: white; padding: 10px;">
-		<%= link_to 'Edit', edit_task_path(@task) %> |
-		<%= link_to 'Back', tasks_path %>
+		<%= link_to 'Edit', edit_project_path(@project) %> |
+		<%= link_to 'Back', projects_path %>
 		<h1>
-			<%= @task.title %>  
+			<%= @project.title %>  
 		</h1>
 
 
@@ -18,8 +16,8 @@
 		<div id="myTabContent" class="tab-content">
 			<div class="tab-pane fade  active in" id="tasks">
 
-				<% if @task.have_subtasks? %>
-				<%= render "subtasks" %>
+				<% if @project.have_tasks? %>
+				<%= render "tasks" %>
 				<% end %>
 				
 				<a class="toggle-link" href="#new-task"><i class="icon-plus"></i> New Task</a>
@@ -40,7 +38,7 @@
 				</ul>
 			</div>
 			<div class="tab-pane fade" id="description">
-				<p><%= @task.description %></p>
+				<p><%= @project.description %></p>
 			</div>
 			<div class="tab-pane fade" id="files">
 				<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
@@ -83,16 +81,3 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-<%= render "statusbar"%>
-
-<p id="notice"><%= notice %></p>
-
-
-
-
-
-
-
-
