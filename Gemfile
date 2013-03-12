@@ -14,6 +14,8 @@ gem 'devise'
 gem 'nifty-generators'
 gem 'ancestry'
 
+gem 'turbolinks'
+
 
 
 # Gems used only for assets and not required
