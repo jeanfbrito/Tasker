@@ -13,7 +13,7 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new(:parent_id => params[:parent_id])
+    @task = Task.new(:parent_id => params[:parent_id], :project_id => params[:project_id])
 
     respond_to do |format|
       format.html # new.html.erb
