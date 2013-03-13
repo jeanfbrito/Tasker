@@ -1,7 +1,7 @@
 
 <ul class="tasks zebra-list">
 
-  <% @project.tasks.each do |task| %>
+  <% @project.tasks.roots.each do |task| %>
   <li>
     <input type="checkbox"> 
     <span class="title"><%= link_to task.title, task %> 
