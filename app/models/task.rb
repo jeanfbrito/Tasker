@@ -1,23 +1,24 @@
 class Task < ActiveRecord::Base
 
-	has_ancestry
+  has_ancestry
 
-	attr_accessible :title, :description, :parent_id
+  attr_accessible :title, :description, :parent_id, :project_id
 
-	belongs_to	:state
-	belongs_to	:priority
-	has_many 	:notes
+  belongs_to :project
+  belongs_to :state
+  belongs_to :priority
+  has_many :notes
 
-	# #self relational code
-	# has_many 	:task_subtasks
-	# has_many 	:subtasks, :through => :task_subtasks
+  # #self relational code
+  # has_many 	:task_subtasks
+  # has_many 	:subtasks, :through => :task_subtasks
 
-	# has_one 	:inverse_task_subtasks, :class_name => "TaskSubtask", :foreign_key => "subtask_id"  
- #  has_one 	:inverse_subtasks, :through => :inverse_task_subtasks, :source => :task 
+  # has_one 	:inverse_task_subtasks, :class_name => "TaskSubtask", :foreign_key => "subtask_id"
+  # has_one 	:inverse_subtasks, :through => :inverse_task_subtasks, :source => :task
 
- def have_subtasks?
-  	if children.count > 0
-    	return true
+  def have_subtasks?
+    if children.count > 0
+      return true
     end
     false
   end
