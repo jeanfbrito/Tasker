@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312033323) do
+ActiveRecord::Schema.define(:version => 20130313131207) do
 
   create_table "notes", :force => true do |t|
     t.string   "title"
@@ -30,13 +30,6 @@ ActiveRecord::Schema.define(:version => 20130312033323) do
   create_table "project_notes", :force => true do |t|
     t.integer  "project_id"
     t.integer  "note_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "project_tasks", :force => true do |t|
-    t.integer  "project_id"
-    t.integer  "task_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -64,13 +57,6 @@ ActiveRecord::Schema.define(:version => 20130312033323) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "task_subtasks", :force => true do |t|
-    t.integer  "task_id"
-    t.integer  "subtask_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "tasks", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -81,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20130312033323) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.string   "ancestry"
+    t.integer  "project_id"
   end
 
   add_index "tasks", ["ancestry"], :name => "index_tasks_on_ancestry"
