@@ -20,7 +20,7 @@
     
       var target = $($(this).attr('href')).toggleClass('hidden');
       
-      $.scrollTo(target);
+      //$.scrollTo(target);
       
       e.preventDefault();
     

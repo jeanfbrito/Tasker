@@ -2,8 +2,8 @@
 
 <%= simple_form_for Task.new,  :html => { :class => 'form-horizontal hidden' , :id => 'new-task' } do |f| %>
 
-  <%= f.hidden_field :parent_id, value: @task.id %>
-  <%= f.hidden_field :project_id, value: @task.project.id %>
+  <%= f.hidden_field :parent_id %>
+  <%= f.hidden_field :project_id, value: @project.id %>
 
   <% if notification = f.error_notification %>
     <div class="alert alert-error fade in">
