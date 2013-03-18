@@ -1,4 +1,4 @@
-<a class="toggle-link" href="#new-project"><i class="icon-plus"></i> New Task</a>
+<a class="toggle-link" href="#new-project"><i class="icon-plus"></i> New Project</a>
 
 <%= simple_form_for Project.new,  :html => { :class => 'form-horizontal hidden' , :id => 'new-project' } do |f| %>
 
@@ -9,7 +9,7 @@
     </div>
   <% end %>
 
-  <legend>New Task</legend>
+  <legend>New Project</legend>
   <%= f.input :title, :input_html => { :class => "span3" },
   :hint => "add your project title here" %>
 
