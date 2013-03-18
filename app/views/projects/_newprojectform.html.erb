@@ -1,9 +1,6 @@
-<a class="toggle-link" href="#new-task"><i class="icon-plus"></i> New Task</a>
+<a class="toggle-link" href="#new-project"><i class="icon-plus"></i> New Task</a>
 
-<%= simple_form_for Task.new,  :html => { :class => 'form-horizontal hidden' , :id => 'new-task' } do |f| %>
-
-  <%= f.hidden_field :parent_id %>
-  <%= f.hidden_field :project_id, value: @project.id %>
+<%= simple_form_for Project.new,  :html => { :class => 'form-horizontal hidden' , :id => 'new-project' } do |f| %>
 
   <% if notification = f.error_notification %>
     <div class="alert alert-error fade in">
@@ -12,9 +9,9 @@
     </div>
   <% end %>
 
-  <legend>New Project</legend>
+  <legend>New Task</legend>
   <%= f.input :title, :input_html => { :class => "span3" },
-  :hint => "add your task title here" %>
+  :hint => "add your project title here" %>
 
 
   <div class="form-actions">
