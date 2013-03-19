@@ -5,7 +5,14 @@ class Task < ActiveRecord::Base
 
   attr_accessible :title, :description, :parent_id, :project_id, :status
 
-  enumerize :status, in: {:created => 0, :working => 1, :waiting => 2, :paused => 3, :stopped => 4, :finished => 5}
+  enumerize :status, in: {
+    :created => 0, 
+    :working => 1, 
+    :waiting => 2, 
+    :paused => 3, 
+    :stopped => 4, 
+    :finished => 5
+    }, default: :created
   
   belongs_to :project
   belongs_to :priority
