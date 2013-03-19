@@ -12,7 +12,7 @@ class Task < ActiveRecord::Base
     :paused => 3, 
     :stopped => 4, 
     :finished => 5
-    }, default: :created
+    }, default: :created, scope: true
   
   belongs_to :project
   belongs_to :priority
@@ -25,7 +25,7 @@ class Task < ActiveRecord::Base
   # has_one 	:inverse_task_subtasks, :class_name => "TaskSubtask", :foreign_key => "subtask_id"
   # has_one 	:inverse_subtasks, :through => :inverse_task_subtasks, :source => :task
 
-  scope :having_status, lambda { |status| where(:status => status) }
+  #scope :having_status, lambda { |status| where(:status => status) }
 
   def have_subtasks?
     if children.count > 0

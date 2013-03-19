@@ -18,8 +18,7 @@ gem 'turbolinks'
 
 gem 'simple_form'
 
-gem 'enumerize'
-
+gem 'enumerize', :git => 'git://github.com/brainspec/enumerize.git'
 
 
 # Gems used only for assets and not required
