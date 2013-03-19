@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313131207) do
+ActiveRecord::Schema.define(:version => 20130319003618) do
 
   create_table "notes", :force => true do |t|
     t.string   "title"
@@ -82,9 +82,11 @@ ActiveRecord::Schema.define(:version => 20130313131207) do
     t.datetime "updated_at",     :null => false
     t.string   "ancestry"
     t.integer  "project_id"
+    t.integer  "status"
   end
 
   add_index "tasks", ["ancestry"], :name => "index_tasks_on_ancestry"
+  add_index "tasks", ["status"], :name => "index_tasks_on_status"
 
   create_table "user_projects", :force => true do |t|
     t.integer  "user_id"

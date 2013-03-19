@@ -1,11 +1,13 @@
 class Task < ActiveRecord::Base
+  extend Enumerize
 
   has_ancestry
 
-  attr_accessible :title, :description, :parent_id, :project_id
+  attr_accessible :title, :description, :parent_id, :project_id, :status
 
+  enumerize :status, in: {:created => 0, :working => 1, :waiting => 2, :paused => 3, :stopped => 4, :finished => 5}
+  
   belongs_to :project
-  belongs_to :state
   belongs_to :priority
   has_many :notes
 

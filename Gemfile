@@ -18,6 +18,8 @@ gem 'turbolinks'
 
 gem 'simple_form'
 
+gem 'enumerize'
+
 
 
 # Gems used only for assets and not required
