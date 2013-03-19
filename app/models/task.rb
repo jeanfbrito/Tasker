@@ -5,7 +5,7 @@ class Task < ActiveRecord::Base
 
   attr_accessible :title, :description, :parent_id, :project_id, :status
 
-  enumerize :status, in: {
+  enumerize :status, :in => {
     :created => 0, 
     :working => 1, 
     :waiting => 2, 
@@ -24,6 +24,8 @@ class Task < ActiveRecord::Base
 
   # has_one 	:inverse_task_subtasks, :class_name => "TaskSubtask", :foreign_key => "subtask_id"
   # has_one 	:inverse_subtasks, :through => :inverse_task_subtasks, :source => :task
+
+  scope :having_status, lambda { |status| where(:status => status) }
 
   def have_subtasks?
     if children.count > 0
