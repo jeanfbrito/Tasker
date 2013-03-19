@@ -1,4 +1,4 @@
-<%= form_for(@task) do |f| %>
+<%= simple_form_for(@task) do |f| %>
   <%= f.hidden_field :parent_id %>
   <%= f.hidden_field :project_id %>
   <% if @task.errors.any? %>
@@ -17,6 +17,11 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.input :status %>
+  </div>
+  
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
