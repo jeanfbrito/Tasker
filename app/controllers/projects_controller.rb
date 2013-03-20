@@ -1,6 +1,9 @@
 class ProjectsController < ApplicationController
-	def index
-    @projects = Project.order('created_at')
+
+  before_filter :authenticate_user!
+
+  def index
+    @projects = current_user.projects.order('created_at')
   end
 
   def show
@@ -9,6 +12,15 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
+    end
+  end
+
+  def new
+    @project = Project.new(:user_id => params[:user_id])
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @task }
     end
   end
 

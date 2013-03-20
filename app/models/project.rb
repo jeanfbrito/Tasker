@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-  attr_accessible :title, :description
+  attr_accessible :title, :description, :user_id
 
   belongs_to  :state
   belongs_to  :priority

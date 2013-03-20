@@ -1,5 +1,8 @@
 class TasksController < ApplicationController
-	def index
+
+  before_filter :authenticate_user!
+
+  def index
     @tasks = Task.arrange(:order => :created_at)
   end
 
@@ -26,7 +29,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
-	def create
+  def create
     @task = Task.new(params[:task])
 
     respond_to do |format|
