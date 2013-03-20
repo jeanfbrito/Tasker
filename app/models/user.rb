@@ -9,6 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-  has_many :user_projects
-  has_many :projects, :through => :user_projects
+  has_many :projects
 end
