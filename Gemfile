@@ -9,7 +9,10 @@ gem 'initjs'
 
 gem 'thin'
 
-gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 
 gem 'nifty-generators'
 gem 'ancestry'
@@ -52,11 +55,11 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 group :production do
-	gem 'pg'
+  gem 'pg'
 end
 
 group :development do
-	gem 'sqlite3'
+  gem 'sqlite3'
   gem "better_errors"
   gem "binding_of_caller"
 end
