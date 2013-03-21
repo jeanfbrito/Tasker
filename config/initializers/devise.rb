@@ -239,6 +239,10 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
   require "omniauth-google-oauth2"
-  config.omniauth :google_oauth2, "831084238382.apps.googleusercontent.com", "qa5byQ4AaVxnfuzPgyR_eAK4", { access_type: "offline", approval_prompt: "" }
+  config.omniauth :google_oauth2, "831084238382.apps.googleusercontent.com", "qa5byQ4AaVxnfuzPgyR_eAK4", 
+      { access_type: "offline", 
+        :scope => "userinfo.email,userinfo.profile,plus.me,http://gdata.youtube.com",
+        :approval_prompt => "auto" 
+      }
 
 end

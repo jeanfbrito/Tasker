@@ -12,7 +12,7 @@ gem 'thin'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
-gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+gem 'devise'
 
 gem 'nifty-generators'
 gem 'ancestry'
