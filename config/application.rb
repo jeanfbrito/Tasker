@@ -60,7 +60,11 @@ module Tasker
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-
-    config.force_ssl = true
+    
+    if Rails.env.production?
+        config.force_ssl = true
+    else
+        config.force_ssl = false
+    end  
   end
 end
