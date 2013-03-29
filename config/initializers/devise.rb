@@ -246,7 +246,7 @@ Devise.setup do |config|
         :approval_prompt => "auto" 
       }
   else
-    config.omniauth :google_oauth2, "831084238382.apps.googleusercontent.com", "qa5byQ4AaVxnfuzPgyR_eAK4", 
+    config.omniauth :google_oauth2, "831084238382-uoa8vln3hf9hvvum7be2j766t7j13sr5.apps.googleusercontent.com", "7xNLwEJmDfm4KNCPS7LuO1Uz", 
       { access_type: "offline", 
         :scope => "userinfo.email,userinfo.profile,plus.me",
         :approval_prompt => "auto" 
