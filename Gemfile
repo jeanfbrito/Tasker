@@ -23,6 +23,8 @@ gem 'simple_form'
 
 gem 'enumerize', :git => 'git://github.com/brainspec/enumerize.git'
 
+gem "ckeditor"
+
 
 # Gems used only for assets and not required
 # in production environments by default.
