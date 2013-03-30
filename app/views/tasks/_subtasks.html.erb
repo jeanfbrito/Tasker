@@ -7,7 +7,7 @@
       <span class="title"><%= link_to subtask.title, subtask %> 
        || <%= link_to 'Remove', subtask, :confirm => 'Are you sure?', :method => :delete %>
      </span> 
-     <span class="meta">Created <em><%=time_ago_in_words(subtask.created_at)%></em> ago by <em>Jill</em></span>
+     <span class="meta">Created <em><%=time_ago_in_words(subtask.created_at)%></em> ago by <em><%=subtask.project.user.name%></em></span>
    </li>
    <% end %>
  </ul>
