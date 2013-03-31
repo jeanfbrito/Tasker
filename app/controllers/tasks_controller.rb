@@ -16,10 +16,11 @@ class TasksController < ApplicationController
   end
 
   def new
+
     @task = Task.new(:parent_id => params[:parent_id], :project_id => params[:project_id])
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => !request.xhr? }
       format.json { render json: @task }
     end
   end
