@@ -1,7 +1,8 @@
 <%= render "shared/breadcrumb"%>
 <div class="span7" style="margin: 0;">
   <div class="well" style="padding: 8px 0; background: white; padding: 10px;">
-    <%= link_to 'Edit', edit_task_path(@task) %> |
+
+    <%= link_to 'Edit', "#editTask", :data => { :url => edit_task_path(@task), :toggle => "modal" }, :class => "edit-task-button" %> |
     <% if @task.parent %>
       <%= link_to 'Back', @task.parent %>
     <% else %>
@@ -93,10 +94,13 @@
 
 <p id="notice"><%= notice %></p>
 
-
-
-
-
-
-
-
+<!-- Modal -->
+<div id="editTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>Editing Task</h3>
+  </div>
+  <div class="modal-body">
+    Carregando...
+  </div>
+</div>

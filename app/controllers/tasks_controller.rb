@@ -28,6 +28,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    render :layout => !request.xhr?
   end
 
   def create
