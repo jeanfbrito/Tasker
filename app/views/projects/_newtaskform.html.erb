@@ -1,4 +1,4 @@
-<a class="toggle-link" href="#new-task"><i class="icon-plus"></i> New Task</a>
+<a href="#newTask" role="button" data-toggle="modal"><i class="icon-plus"></i> New Task</a>
 
 <%= simple_form_for Task.new,  :html => { :class => 'form-horizontal hidden' , :id => 'new-task' } do |f| %>
 

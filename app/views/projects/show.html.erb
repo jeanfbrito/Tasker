@@ -54,7 +54,7 @@
         </ul>
       </div>
       <div class="tab-pane fade" id="description">
-        <p><%= @project.description.html_safe %></p>
+        <p><%= raw @project.description %></p>
       </div>
       <div class="tab-pane fade" id="files">
         <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
@@ -97,3 +97,15 @@
       </div>
     </div>
   </div>
+
+ 
+<!-- Modal -->
+<div id="newTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>New Task</h3>
+  </div>
+  <div class="modal-body">
+    Carregando...
+  </div>
+</div>
