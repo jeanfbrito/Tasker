@@ -2,10 +2,9 @@ Tasker.Projects = {} if Tasker.Projects is undefined
 
 Tasker.Projects.Show = ->
   $('.new-task-button').click ->
-    id = $(this).data('project-id')
+    url = $(this).data('url')
     $.ajax
-      url: "/tasks/new"
-      data: "project_id=#{id}"
+      url: url
       type: "GET"
       success: (data)->
         $('#newTask .modal-body').html(data)
