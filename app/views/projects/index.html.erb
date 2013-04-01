@@ -3,7 +3,7 @@
     Projects
   </h1>
 
-  <%= render "newprojectform" %>
+  <a href="#newProject" data-url="<%= new_project_path(:user_id => current_user.id)%>" data-toggle="modal" class="new-project-button"><i class="icon-plus"></i> New Project</a>
 
   <ul class="tasks zebra-list">
     <% if @projects.count > 0 %>
@@ -17,4 +17,15 @@
       <% end %>
     <% end %>
   </ul>
+</div>
+
+<!-- Modal -->
+<div id="newProject" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>New Project</h3>
+  </div>
+  <div class="modal-body">
+    Carregando...
+  </div>
 </div>

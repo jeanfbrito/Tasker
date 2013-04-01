@@ -19,8 +19,8 @@ class ProjectsController < ApplicationController
     @project = Project.new(:user_id => params[:user_id])
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @task }
+      format.html { render :layout => !request.xhr? }
+      format.json { render json: @project }
     end
   end
 
