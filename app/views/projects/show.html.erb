@@ -1,5 +1,5 @@
   <div class="well" style="padding: 8px 0; background: white; padding: 10px;">
-    <%= link_to 'Edit', edit_project_path(@project) %> |
+    <%= link_to 'Edit', "#editProject", :data => { :url => edit_project_path(@project), :toggle => "modal" }, :class => "edit-project-button" %> |
     <%= link_to 'Back', projects_path %>
     <h1>
       <%= @project.title %>  
@@ -88,6 +88,16 @@
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3>New Task</h3>
+  </div>
+  <div class="modal-body">
+    Carregando...
+  </div>
+</div>
+
+<div id="editProject" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>Editing Project</h3>
   </div>
   <div class="modal-body">
     Carregando...

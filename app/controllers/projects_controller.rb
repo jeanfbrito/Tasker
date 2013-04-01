@@ -26,6 +26,7 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    render :layout => !request.xhr?
   end
 
   def create
