@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require tasker/tasker.js
 //= require ckeditor/init
+//= require ckeditor/ckeditor
 //= require init.js
 //= require_tree .
 //= require bootstrap
