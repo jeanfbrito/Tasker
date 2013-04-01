@@ -23,7 +23,7 @@
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane fade  active in" id="tasks">
         
-        <%= render "newtaskform" %>
+        <a href="#newTask" data-url="<%= new_task_path(:parent_id => @task.id, :project_id => @task.project.id)%>" data-toggle="modal" class="new-task-button"><i class="icon-plus"></i> New Task</a>
 
         <% if @task.have_subtasks? %>
         <%= render "subtasks" %>
@@ -99,6 +99,16 @@
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3>Editing Task</h3>
+  </div>
+  <div class="modal-body">
+    Carregando...
+  </div>
+</div>
+
+<div id="newTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>New Task</h3>
   </div>
   <div class="modal-body">
     Carregando...
