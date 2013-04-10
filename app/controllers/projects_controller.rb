@@ -2,6 +2,8 @@ class ProjectsController < ApplicationController
 
   before_filter :authenticate_user!
 
+  layout "manager"
+
   def index
     @projects = current_user.projects.order('created_at')
   end

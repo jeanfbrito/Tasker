@@ -9,19 +9,7 @@
 <body>
 <%= initjs_tag app_name: 'Tasker' %>
 
-<% if user_signed_in? %>
-  <%= render "shared/mainscreen"%>
-<% end %>
-
-
-<div id="user_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>, ID= <%= current_user.id %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
-  <% end %>
-</div>
+<%= yield %>
 
 </body>
 </html>

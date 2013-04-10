@@ -2,6 +2,8 @@ class TasksController < ApplicationController
 
   before_filter :authenticate_user!
 
+  layout "manager"
+
   def index
     @tasks = Task.arrange(:order => :created_at)
   end
