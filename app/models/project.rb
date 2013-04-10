@@ -10,10 +10,19 @@ class Project < ActiveRecord::Base
   
   has_many :tasks
 
+  has_many :documents
+
   belongs_to :user
 
   def have_tasks?
     if tasks.count > 0
+      return true
+    end
+    false
+  end
+
+  def have_documents?
+    if documents.count > 0
       return true
     end
     false

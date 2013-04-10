@@ -13,18 +13,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "span4"%>
   </div>
-
+  <br />
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => "span4", :rows => 3 %>
+  </div>
+  <br />
   <div class="field">
     <%= f.file_field :attachment%>
   </div>
-
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.input :description, :as => :ckeditor %>
-  </div>
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>
