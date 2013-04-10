@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321033829) do
+ActiveRecord::Schema.define(:version => 20130410125653) do
+
+  create_table "documents", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.integer  "project_id"
+  end
 
   create_table "notes", :force => true do |t|
     t.string   "title"
@@ -30,13 +42,6 @@ ActiveRecord::Schema.define(:version => 20130321033829) do
   create_table "project_notes", :force => true do |t|
     t.integer  "project_id"
     t.integer  "note_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "project_tasks", :force => true do |t|
-    t.integer  "project_id"
-    t.integer  "task_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -61,13 +66,6 @@ ActiveRecord::Schema.define(:version => 20130321033829) do
   create_table "task_notes", :force => true do |t|
     t.integer  "task_id"
     t.integer  "note_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "task_subtasks", :force => true do |t|
-    t.integer  "task_id"
-    t.integer  "subtask_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -110,7 +108,6 @@ ActiveRecord::Schema.define(:version => 20130321033829) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
-    t.string   "surname"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "picture"
