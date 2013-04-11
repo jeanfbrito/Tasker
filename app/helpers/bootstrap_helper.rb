@@ -7,11 +7,13 @@ module BootstrapHelper
   def icon_classes(*names)
     final = ""
     names[0].each do |n|
-     	final = final + "icon-" + n.to_s + " "
+      final = final + "icon-" + n.to_s + " "
     end
-  	return final
+    return final
   end
 end
+
+
 
 #names.map {|name| "icon-#{name}" }
 
