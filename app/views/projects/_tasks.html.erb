@@ -15,3 +15,35 @@
    <% end %>
  </ul>
 </div>
+
+<h1>Tasks</h1>
+
+<table id="subtasks" class="display">
+<thead>
+  <tr>
+    <th>Priority</th>
+    <th>Task Title</th>
+    <th>Estimated Time</th>
+    <th>Due Time</th>
+    <th>Status</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% @project.tasks.roots.each do |subtask| %>
+    <tr>
+      <td><%= subtask.priority %></td>
+      <td><%= link_to(subtask.title, subtask) %></td>
+      <td><%= subtask.estimated_time %></td>
+      <td><%= subtask.due_time %></td>
+      <td><%= subtask.status %></td>
+      <td>
+        <%= link_to icon(:edit, :white) + ' Edit', "#editProject", :data => { :url => edit_project_path(@project), :toggle => "modal" }, :class => "edit-project-button btn btn-primary" %>
+        <%= link_to icon(:remove , :white) + ' Remove', subtask, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+<br>
+<br>
