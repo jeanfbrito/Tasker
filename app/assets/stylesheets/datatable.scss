@@ -1,0 +1,19 @@
+tr.odd td.sorting_1 {
+    background-color: #F9F9F9;
+}
+ 
+tr.odd td.sorting_2 {
+    background-color: #DADCFF;
+}
+ 
+tr.odd td.sorting_3 {
+    background-color: #E0E2FF;
+}
+
+table.display tr.even.row_selected td {
+    background-color: #B0BED9;
+}
+ 
+table.display tr.odd.row_selected td {
+    background-color: #9FAFD1;
+}

@@ -15,11 +15,3 @@
  */
 @import "bootstrap";
 @import "bootstrap-responsive";
-
-.nested_tasks {
-  margin-left: 30px;
-}
-
-.nested_tasks .nested_tasks .nested_tasks .nested_tasks .nested_tasks .nested_tasks{
-  margin-left: 0;
-}
