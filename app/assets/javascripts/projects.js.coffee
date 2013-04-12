@@ -1,4 +1,4 @@
 jQuery ->
-        $('#subtasks').dataTable()
-					sPaginationType: "full_numbers"
-					bJQueryUI: true
+        $('#subtasks').dataTable
+          bPaginate: false
+          bInfo: false
