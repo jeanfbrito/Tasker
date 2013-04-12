@@ -39,8 +39,10 @@
       <td><%= subtask.due_time %></td>
       <td><%= subtask.status %></td>
       <td>
-        <%= link_to icon(:edit, :white) + ' Edit', "#editProject", :data => { :url => edit_project_path(@project), :toggle => "modal" }, :class => "edit-project-button btn btn-primary" %>
-        <%= link_to icon(:remove , :white) + ' Remove', subtask, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %></td>
+        <div style="float: right">
+          <%= link_to icon(:edit, :white) + ' Edit', "#editProject", :data => { :url => edit_project_path(@project), :toggle => "modal" }, :class => "edit-project-button btn btn-primary" %>
+          <%= link_to icon(:remove , :white) + ' Remove', subtask, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %></td>
+        </div>
     </tr>
   <% end %>
 </tbody>
