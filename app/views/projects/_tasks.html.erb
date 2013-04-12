@@ -31,7 +31,10 @@
   <% @project.tasks.roots.each do |subtask| %>
     <tr>
       <td><%= subtask.priority %></td>
-      <td><%= link_to(subtask.title, subtask) %></td>
+      <td>
+        <span class="title"><%= link_to subtask.title, subtask %></span>
+        <span class="meta">Created <em><%=time_ago_in_words(subtask.created_at)%></em> ago by <em><%=subtask.project.user.name%></em></span>
+      </td>
       <td><%= subtask.estimated_time %></td>
       <td><%= subtask.due_time %></td>
       <td><%= subtask.status %></td>
