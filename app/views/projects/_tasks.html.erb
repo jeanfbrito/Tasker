@@ -16,7 +16,7 @@
  </ul>
 </div>
 <br>
-<table id="subtasks" class="display">
+<table id="subtasks" class="display table table-bordered">
 <thead>
   <tr>
     <th>Priority</th>
@@ -43,9 +43,16 @@
           <%= link_to icon(:edit, :white) + ' Edit', "#editProject", :data => { :url => edit_project_path(@project), :toggle => "modal" }, :class => "edit-project-button btn btn-primary" %>
           <%= link_to icon(:remove , :white) + ' Remove', subtask, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %></td>
         </div>
+
     </tr>
   <% end %>
+  <tfoot>
+    <tr>
+      <td colspan="6">my footer 1</td>
+    </tr>
+  </tfoot>
 </tbody>
+
 </table>
 
 <br>
