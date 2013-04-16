@@ -57,16 +57,32 @@ h1 {padding-bottom:0.2em;}
   width: 2px;
 }
 
-.prio1 {
-background-color: #EA5200 !important;
+.prio6 {
+background-color: none;
 }
 
-.prio2 {
-background-color: #0060BF !important;
+.prio5 {
+background-color: #CBFEBC !important;
+}
+
+.prio4 {
+background-color: #04FF0B !important;
 }
 
 .prio3 {
-background-color: #359AFF !important;
+background-color: #FFFA35 !important;
+}
+
+.prio2 {
+background-color: #FFD135 !important;
+}
+
+.prio1 {
+background-color: #FF8635 !important;
+}
+
+.prio0 {
+background-color: #FF3535 !important;
 }
 
 .table-bordered td:nth-child(n+3) {

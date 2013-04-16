@@ -21,7 +21,10 @@
     <%= f.label :status %><br />
     <%= f.input :status, :include_blank => false %>
   </div>
-  
+  <div class="field">
+    <%= f.label :priority %><br />
+    <%= f.input :priority, :include_blank => false %>
+  </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.input :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Basic'} } %>

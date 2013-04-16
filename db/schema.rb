@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130410125653) do
+ActiveRecord::Schema.define(:version => 20130416180007) do
 
   create_table "documents", :force => true do |t|
     t.string   "name"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20130410125653) do
     t.text     "description"
     t.date     "due_time"
     t.string   "estimated_time"
-    t.integer  "priority_id"
+    t.integer  "priority"
     t.integer  "state_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false

@@ -1,7 +1,7 @@
 <div style="padding-top: 8px">
   <ul class="tasks zebra-list">
 
-    <% @task.children.each do |subtask| %>
+    <% @task.children.order("priority desc").each  do |subtask| %>
     <li>
       <input type="checkbox"> 
       <span class="title"><%= link_to subtask.title, subtask %> 
