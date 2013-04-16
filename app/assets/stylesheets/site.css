@@ -89,6 +89,6 @@ background-color: #FF3535 !important;
 border-left: 0px;
 }
 
-#subtasks tr.selected-task > td:nth-child(n+2) {
+#subtasks tr.selected-task td:nth-child(n+2) {
   background-color:#B0FFB0 !important;
 }
