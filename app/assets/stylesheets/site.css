@@ -19,12 +19,12 @@ h1 {padding-bottom:0.2em;}
 .summary a {display:block; font-size:1.2em; line-height:1.4em; text-transform:uppercase; color:#000;}
 .summary .count {display:block; font-size:1.75em; font-weight:bold;}
 
-	/* dashboard - ie fixes */
-	.ie7 .summary {display:block;}
-	.ie7 .summary ul {margin:0; padding:0; overflow:hidden; display:block;}
-	.ie7 .summary li {float:left;}
-	
-	.ielt9 .summary .last {border:none;}
+  /* dashboard - ie fixes */
+  .ie7 .summary {display:block;}
+  .ie7 .summary ul {margin:0; padding:0; overflow:hidden; display:block;}
+  .ie7 .summary li {float:left;}
+  
+  .ielt9 .summary .last {border:none;}
 
 /* tasks */
 .tasks {margin:0; padding:0;}
@@ -54,5 +54,25 @@ h1 {padding-bottom:0.2em;}
 .zebra-list li:last-child {border-bottom:1px solid #DDD; -webkit-border-radius:0 0 4px 4px; -moz-border-radius:0 0 4px 4px; border-radius:0 0 4px 4px;}
 
 #subtasks .selected-task {
-	background-color:#B0FFB0;
+  background-color:#B0FFB0;
+}
+
+.tasks-prio {
+  width: 2px;
+}
+
+.prio1 {
+background-color: #EA5200 !important;
+}
+
+.prio2 {
+background-color: #0060BF !important;
+}
+
+.prio3 {
+background-color: #359AFF !important;
+}
+
+.table-bordered td:nth-child(n+3) {
+border-left: 0px;
 }
