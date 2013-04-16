@@ -4,6 +4,16 @@ class TasksController < ApplicationController
 
   layout "manager"
 
+  def details
+    @task = Task.find(params[:id])
+
+    respond_to do |format|
+      format.html { render :layout => false if request.xhr? }
+      format.xml  { render :xml => @contact }
+      format.json { render json: @user }
+    end
+  end
+
   def index
     @tasks = Task.arrange(:order => :created_at)
   end
@@ -12,7 +22,8 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => false if request.xhr? }
+      format.xml  { render :xml => @contact }
       format.json { render json: @user }
     end
   end

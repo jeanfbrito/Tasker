@@ -2,7 +2,7 @@
   <ul id="subtasks" class="tasks zebra-list">
 
     <% @project.tasks.roots.each do |subtask| %>
-    <li>
+    <li data-contact="<%= subtask.id %>" href-contact="<%= details_task_path(subtask) %>">>
       <input type="checkbox"> 
       <span class="title"><%= link_to subtask.title, subtask %>
         <div style="float: right">

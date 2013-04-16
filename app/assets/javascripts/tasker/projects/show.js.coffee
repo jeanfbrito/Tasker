@@ -31,10 +31,29 @@ Tasker.Projects.Show = ->
       error: ->
         $('#newDocument .modal-body').html("ERROR")
 
-  $("li").not(":first").hover (->
-    $(this).css "background", "yellow"
-  ), ->
-    $(this).css "background", ""
- 
+  clicked_on_link = false
   $("#subtasks li").click ->
-    $(".task-details").html "My text is changed!"
+    if clicked_on_link is false
+      #$(this).css "background", "yellow"
+      $('#subtasks li').removeClass('selected-task')
+      $(this).addClass('selected-task')
+      $.ajax
+        type: "GET"
+        url: $(this).attr("href-contact")
+        data: ""
+        cache: false
+        beforeSend: ->
+          #App.show_load()
+          $(".task-details").html "Loading..."
+
+        success: (txt) ->
+          #App.hide_load()
+          $(".task-details").html txt
+
+        error: ->
+          #App.hide_load()
+          #App.show_error()
+
+        stop: ->
+          #App.hide_load()
+          #App.show_error()
