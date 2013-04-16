@@ -53,10 +53,6 @@ h1 {padding-bottom:0.2em;}
 .zebra-list li:first-child {-webkit-border-radius:4px 4px 0 0; -moz-border-radius:4px 4px 0 0; border-radius:4px 4px 0 0;}
 .zebra-list li:last-child {border-bottom:1px solid #DDD; -webkit-border-radius:0 0 4px 4px; -moz-border-radius:0 0 4px 4px; border-radius:0 0 4px 4px;}
 
-#subtasks .selected-task {
-  background-color:#B0FFB0;
-}
-
 .tasks-prio {
   width: 2px;
 }
@@ -75,4 +71,8 @@ background-color: #359AFF !important;
 
 .table-bordered td:nth-child(n+3) {
 border-left: 0px;
+}
+
+#subtasks tr.selected-task > td:nth-child(n+2) {
+  background-color:#B0FFB0 !important;
 }

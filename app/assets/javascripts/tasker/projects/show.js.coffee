@@ -32,10 +32,10 @@ Tasker.Projects.Show = ->
         $('#newDocument .modal-body').html("ERROR")
 
   clicked_on_link = false
-  $("#subtasks li").click ->
+  $("#subtasks tr").click ->
     if clicked_on_link is false
       #$(this).css "background", "yellow"
-      $('#subtasks li').removeClass('selected-task')
+      $('#subtasks tr').removeClass('selected-task')
       $(this).addClass('selected-task')
       $.ajax
         type: "GET"

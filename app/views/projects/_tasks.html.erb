@@ -1,19 +1,19 @@
-<div style="padding-top: 8px">
+<div id="subtasks" style="padding-top: 8px">
   <table class="table table-striped table-condensed table-bordered">
     <tbody>
       <% @project.tasks.roots.each do |subtask| %>
       <tr data-contact="<%= subtask.id %>" href-contact="<%= details_task_path(subtask) %>">>
         <td class="tasks-prio prio1"></td>
-        <td class="xtd xtd_arr"></td>
-        <td class="xtd xtd_check">
+        <td class=""></td>
+        <td class="">
           <input type="checkbox">
         </td>
         <td>
           <span class="title"><%= link_to subtask.title, subtask %></span> 
           <span class="meta">Created <em><%=time_ago_in_words(subtask.created_at)%></em> ago by <em><%=subtask.project.user.name%></em></span>
         </td> 
-        <td class="xtd xtd_date">Apr 28</td>
-        <td class="xtd xtd_ico"></td></tr>
+        <td class="">Apr 28</td>
+        <td class=""></td></tr>
       </tr>
       <% end %>
     </tbody>
