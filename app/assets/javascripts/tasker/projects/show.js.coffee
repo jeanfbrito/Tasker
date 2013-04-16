@@ -30,3 +30,11 @@ Tasker.Projects.Show = ->
         $('#newDocument .modal-body').html(data)
       error: ->
         $('#newDocument .modal-body').html("ERROR")
+
+  $("li").not(":first").hover (->
+    $(this).css "background", "yellow"
+  ), ->
+    $(this).css "background", ""
+ 
+  $("#subtasks li").click ->
+    $(".task-details").html "My text is changed!"
