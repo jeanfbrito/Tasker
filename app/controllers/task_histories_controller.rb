@@ -16,12 +16,12 @@ class TaskHistoriesController < ApplicationController
   def create
     @task_history = TaskHistory.new(params[:task_history])
 
-    task = Task.find(params[:task_id])
-    task.status = @task_history.status
-    task.save
-
     respond_to do |format|
-      if @task.save
+      if @task_history.save
+        task = Task.find(@task_history.task_id)
+        task.status = @task_history.status
+        task.save
+        
         format.html { redirect_to @task_history, notice: 'Task History was successfully created.' }
         format.json { render json: @task_history, status: :created, location: @task_history }
       else
