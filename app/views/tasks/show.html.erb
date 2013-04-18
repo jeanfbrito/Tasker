@@ -8,6 +8,17 @@
     <% else %>
       <%= link_to 'Back', @task.project %>
     <% end %>
+    <div style="float: right">
+      <a href="#" class="btn btn-small"><i class="icon-play"></i> </a>
+  <a href="#" class="btn btn-small"><i class="icon-pause"></i> </a>
+  <a href="#" class="btn btn-small"><i class="icon-stop"></i> </a>
+  <a href="#" class="btn btn-small"><i class="icon-ok"></i> </a>
+
+  <a href="#" class="btn btn-small btn-primary"><i class="icon-play icon-white"></i> </a>
+  <a href="#" class="btn btn-small btn-warning"><i class="icon-pause"></i> </a>
+  <a href="#" class="btn btn-small btn-danger"><i class="icon-stop"></i> </a>
+  <a href="#" class="btn btn-small btn-success"><i class="icon-ok"></i> </a>
+</div>
     <h1>
       <%= @task.title %>  
     </h1>
