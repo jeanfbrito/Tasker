@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416180007) do
+ActiveRecord::Schema.define(:version => 20130417232845) do
 
   create_table "documents", :force => true do |t|
     t.string   "name"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(:version => 20130416180007) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "task_histories", :force => true do |t|
+    t.integer  "task_id"
+    t.integer  "user_id"
+    t.text     "description"
+    t.integer  "status"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "task_notes", :force => true do |t|

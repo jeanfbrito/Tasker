@@ -27,6 +27,8 @@ class Task < ActiveRecord::Base
   belongs_to :project
   has_many :notes
 
+  has_many  :task_histories
+
   # #self relational code
   # has_many  :task_subtasks
   # has_many  :subtasks, :through => :task_subtasks

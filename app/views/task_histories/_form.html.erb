@@ -1,0 +1,25 @@
+<%= simple_form_for(@task_history) do |f| %>
+  <%= f.hidden_field :task_id %>
+  <%= f.hidden_field :user_id %>
+  <% if @task_history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task_history.errors.count, "error") %> prohibited this task_history from being saved:</h2>
+
+      <ul>
+      <% @task_history.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :status, :include_blank => false %>
+  </div>
+  <div class="field">
+    <%= f.input :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

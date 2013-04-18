@@ -9,6 +9,7 @@ Tasker::Application.routes.draw do
   
   resources :projects
   resources :documents
+  resources :task_histories
 
   root to: "projects#index"
 
