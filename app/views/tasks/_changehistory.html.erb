@@ -1,0 +1,19 @@
+<thread>
+  <tr>
+    <th class="span3">Time</th>
+    <th>Description</th>
+    <th class="span2">User</th>
+    <th>Status</th>
+  </tr>
+</thread>
+<tbody>
+  <% @task.task_histories.each  do |change| %>
+    <tr>
+      <td><%= change.created_at %></td>
+      <td><%= change.description %></td> 
+      <td><%= change.user.name %></td> 
+      <td align=right; width=50px;> <span class="label label-info"><%= change.status %></span> </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

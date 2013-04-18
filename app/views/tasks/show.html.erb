@@ -55,39 +55,7 @@
 
           <a href="#changeTaskStatus" data-url="<%= new_task_history_path(:task_id => @task.id, :user_id => current_user.id)%>" data-toggle="modal" class="new-task_history-button"><i class="icon-plus"></i> Change Status</a>
           
-          <thread>
-            <tr>
-              <th>Time</th>
-              <th>Description</th>
-              <th>Status</th>
-            </tr>
-          </thread>
-          <tbody>
-            <tr>
-              <td>25/02/2013 00:03:02</td>
-              <td>Iniciados os trabalhos na tarefa</td> 
-              <td align=right; width=50px;> <span class="label label-info">Iniciada</span> </td>
-            </tr>
-
-            <tr>
-              <td>25/02/2013 00:07:02</td>
-              <td>Aguardando cliente - Falta definicao de cores</td> 
-              <td align=right; width=50px;><span class="label label-warning">Aguardando</span> </td>
-            </tr>
-
-            <tr>
-              <td>25/02/2013 00:13:02</td>
-              <td>Reiniciados os trabalhos na tarefa</td> 
-              <td align=right; width=50px;><span class="label label-info">Trabalhando</span> </td>
-            </tr>
-
-            <tr>
-              <td>25/02/2013 00:20:02</td>
-              <td>Finalizados os trabalhos na tarefa</td> 
-              <td align=right; width=50px;> <span class="label label-success">Terminada</span>  </td>
-            </tr>
-          </tbody>
-        </table>
+        <%= render "changehistory"%>  
       </div>
     </div>
   </div>

@@ -85,7 +85,7 @@ background-color: #FF8635 !important;
 background-color: #FF3535 !important;
 }
 
-.table-bordered td:nth-child(n+3) {
+#subtasks .table-bordered td:nth-child(n+3) {
 border-left: 0px;
 }
 
