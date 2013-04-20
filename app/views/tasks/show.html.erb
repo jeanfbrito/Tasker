@@ -1,5 +1,16 @@
 <%= render "shared/breadcrumb"%>
 <div class="span7" style="margin: 0;">
+
+  <!-- <p id="notice"><%= notice %></p> -->
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+        <a class="close" data-dismiss="alert">&#215;</a>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      </div>
+    <% end %>
+  <% end %>
+
   <div class="well" style="padding: 8px 0; background: white; padding: 10px;">
 
     <%= link_to 'Edit', "#editTask", :data => { :url => edit_task_path(@task), :toggle => "modal" }, :class => "edit-task-button" %> |
@@ -73,8 +84,6 @@
 </div>
 
 <%= render "shared/statusbar"%>
-
-<p id="notice"><%= notice %></p>
 
 <!-- Modal -->
 <div id="editTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
