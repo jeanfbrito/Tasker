@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
-
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   layout "manager"
 
@@ -18,7 +17,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = Project.new(:user_id => params[:user_id])
+    @project = Project.new(:user => current_user)
 
     respond_to do |format|
       format.html { render :layout => !request.xhr? }
@@ -32,7 +31,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project= Project.new(params[:project])
+    @project = Project.new(permitted_params)
 
     respond_to do |format|
       if @project.save
@@ -47,8 +46,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     respond_to do |format|
-      if @project.update_attributes(params[:project])
-        format.html { redirect_to @project, notice: 'Task was successfully updated.' }
+      if @project.update_attributes(permitted_params)
+        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -57,4 +56,9 @@ class ProjectsController < ApplicationController
     end
   end
 
+  protected
+
+  def permitted_params
+    params.require(:project).permit(:title, :description)
+  end
 end

@@ -1,32 +1,20 @@
 class Project < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :state
+  belongs_to :priority
 
-  attr_accessible :title, :description, :user_id
-
-  belongs_to  :state
-  belongs_to  :priority
-
-  has_many  :project_notes
-  has_many  :notes, :through => :project_notes
-  
+  has_many :project_notes
+  has_many :notes, :through => :project_notes
   has_many :tasks
-
   has_many :documents
 
-  belongs_to :user
+  validates :title, presence: true
 
   def have_tasks?
-    if tasks.count > 0
-      return true
-    end
-    false
+    tasks.count > 0 ? true : false
   end
 
   def have_documents?
-    if documents.count > 0
-      return true
-    end
-    false
+    documents.count > 0 ? true : false
   end
-
 end
-
