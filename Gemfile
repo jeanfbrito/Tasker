@@ -1,71 +1,37 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '~> 4.2.7'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem "paperclip"
-
+gem 'pg', '~> 0.18'
+gem 'paperclip'
 gem 'initjs'
-
 gem 'thin'
-
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-
-gem 'devise'
-
+gem 'devise', '4.2'
 gem 'nifty-generators'
 gem 'ancestry'
+gem 'turbolinks', '~> 5.0.0'
+gem 'simple_form', '3.3'
+gem 'enumerize', '~> 2.0.1'
+gem 'ckeditor'
+gem 'jquery-rails', '~> 4.2.2'
 
-gem 'turbolinks'
+# ASSETS
+gem 'sass-rails', '~> 5.0'
+gem 'coffee-rails', '~> 4.2.1'
+gem 'compass-rails', '~> 3.0.2'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'uglifier', '~> 3.0.4'
 
-gem 'simple_form'
-
-gem 'enumerize', :git => 'git://github.com/brainspec/enumerize.git'
-
-gem "ckeditor"
-
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem "compass-rails", "~> 1.0.3"
-  gem 'bootstrap-sass'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
-  #gem 'jquery-ui-rails'
-end
-
-gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
 group :production do
-  gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :development do
+  gem 'spring'
   gem 'meta_request'
-  gem 'sqlite3'
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'byebug'
 end

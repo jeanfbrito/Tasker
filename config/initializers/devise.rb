@@ -4,10 +4,12 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = "no-reply@tasker.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
+
+  config.secret_key = 'fdfbd8c44499fb4718c58aa35bd3a058b944ff9daded0acfe36ccdb03c70d468f8a06289849dd4d3d474121baf4a925caff4823bf7e04c44d45f10a6f84a8175'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -240,18 +242,16 @@ Devise.setup do |config|
 
   require "omniauth-google-oauth2"
   if Rails.env.production?
-    config.omniauth :google_oauth2, "831084238382-riuu9hpmuq2b48osu0o7j5svaqo1uqs2.apps.googleusercontent.com", "JWyqbnhsjCnIVBFClYv6sN3a", 
-      { access_type: "offline", 
+    config.omniauth :google_oauth2, "831084238382-riuu9hpmuq2b48osu0o7j5svaqo1uqs2.apps.googleusercontent.com", "JWyqbnhsjCnIVBFClYv6sN3a",
+      { access_type: "offline",
         :scope => "userinfo.email,userinfo.profile,plus.me",
-        :approval_prompt => "auto" 
+        :approval_prompt => "auto"
       }
   else
-    config.omniauth :google_oauth2, "831084238382-uoa8vln3hf9hvvum7be2j766t7j13sr5.apps.googleusercontent.com", "7xNLwEJmDfm4KNCPS7LuO1Uz", 
-      { access_type: "offline", 
+    config.omniauth :google_oauth2, "831084238382-uoa8vln3hf9hvvum7be2j766t7j13sr5.apps.googleusercontent.com", "7xNLwEJmDfm4KNCPS7LuO1Uz",
+      { access_type: "offline",
         :scope => "userinfo.email,userinfo.profile,plus.me",
-        :approval_prompt => "auto" 
+        :approval_prompt => "auto"
       }
   end
-  
-
 end

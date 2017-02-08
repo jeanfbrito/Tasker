@@ -17,5 +17,5 @@
 //= require ckeditor/ckeditor
 //= require init.js
 //= require_tree .
-//= require bootstrap
 //= require turbolinks
+//= require bootstrap-sprockets
